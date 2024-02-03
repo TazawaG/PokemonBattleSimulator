@@ -1,0 +1,21 @@
+Nom,TYPE1,TYPE2,PV,atk,déf,atksp,defsp,vit
+Tortank,EAU,NONE,226,152,178,155,185,145,Hydrocanon,Hydroqueue,Laser Glace,Tomberoche
+Galopa,FEU,NONE,205,178,133,148,148,185,Feu d'Enfer,Lance Flammes,Estocorne,Déflagration
+Ectoplasma,SPECTRE,POISON,198,125,118,223,140,193,Dévorêve,BallOmbre,Vibroscur,DirectToxik
+Aquali,EAU,None,303,125,118,193,170,125,Hydrocanon,Ocroupi,Hydroqueue,Ébulition
+Mewtwo,PSY,None,267,193,163,259,163,223,Frappe Psy,Psyko,Laser Glace,Fatal Foudre
+Typhlosion,FEU,None,225,154,145,191,155,178,Feu d'Enfer,Lance Flammes,Déflagration,Surchauffe
+Laggron,EAU,SOL,258,193,163,155,163,118,Hydrocanon,Ocroupi,Surf,Lame de Roc
+Rayquaza,DRAGON,VOL,265,253,163,253,163,170,Draco Ascension,Vol,Vent Violent,Draco Choc
+Simiabraz,FEU,COMBAT,222,184,134,184,134,190,Déflagration,Grand Courroux,Lance Flammes,Séisme
+Carchacrok,DRAGON,SOL,270,223,170,148,155,181,Draco Charge,Surf,Lame de Roc,Telluriforce
+Gallame,PSY,COMBAT,210,215,125,125,200,148,Dévorêve,Lame Feuille,Psyko,Coupe Psyko
+Darkrai,TÉNÈBRES,None,213,163,163,230,163,215,Vibroscur,Dévorêve,Ball Ombre,Psyko
+Arceus,NORMAL,None,288,208,208,208,208,208,Jugement,Hurle Temps,Spacio Rift,Revenant
+Symbios,PSY,None,273,125,140,215,155,73,Prescience,Psyko,Dévorêve,Fatal Foudre
+Sorbouboul,GLACE,None,214,170,155,193,170,146,Blizzard,Laser Glace,Brouhaha,Luminocanon
+Cliticlic,ACIER,None,198,178,200,133,155,163,Élecanon,Tonnerre,Luminocanon,Fatal Foudre
+Blindépique,PLANTE,COMBAT,240,188,211,139,140,124,Martobois,Marto Poing,Canon Graine,Éco Sphère
+Trousselin,ACIER,FÉE,193,148,164,148,158,140,Tricherie,Câlinerie,Éclat Magique,Luminocanon
+Chelours,NORMAL,COMBAT,288,215,148,110,118,118,Damoclès,Mania,Marto Poing,Surpuissance
+Gorythmic,PLANTE,None,258,215,163,118,133,155,Martobois,Éco Sphère,Brouhaha,Telluriforce
