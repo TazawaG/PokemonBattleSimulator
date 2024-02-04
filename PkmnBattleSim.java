@@ -38,8 +38,26 @@ class PkmnBattleSim {
         }
         return atkRes;
     }
+    static boolean isValidPokemon(String attempt) {
+        for (int i = 0; i < pkmnDatabase.length; i += 1) {
+            if(pkmnDatabase[i].nom.equals(attempt)) {return true;}
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
-        System.out.println(pkmnDatabase[3]);
+        System.out.print("Bienvenue dans le Pokémon Battle Simulator!\n\nVeuillez choisir un Pokémon dans la liste suivante:\n\t");
+        for (int i = 0; i < pkmnDatabase.length - 1; i += 1) {
+            System.out.print(pkmnDatabase[i].nom + ", ");
+        }
+        System.out.println("et " + pkmnDatabase[pkmnDatabase.length-1].nom + "\n");
+        /*String pkmnAttempt = ;
+        while (!isValidPokemon(pkmnAttempt)) {
+            for (int i = 0; i < pkmnDatabase.length - 1; i += 1) {
+                System.out.print(pkmnDatabase[i].nom + ", ");
+            }
+            System.out.println("et " + pkmnDatabase[pkmnDatabase.length-1].nom + "\n");
+            pkmnAttempt = ;
+        }*/
     }
 }
