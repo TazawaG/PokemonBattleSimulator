@@ -1,5 +1,5 @@
 class PkmnBattleSim {
-    static final int HP = 0;
+    static final int PV = 0;
     static final int ATK = 1;
     static final int DEF = 2;
     static final int ATKSP = 3;
@@ -11,6 +11,10 @@ class PkmnBattleSim {
 
     static Pokemon you;
     static Pokemon enemy;
+    static Pokemon youBase;
+    static Pokemon enemyBase;
+    static boolean youUsedTwoTurnMove = false;
+    static boolean enemyUsedTwoTurnMove = false;
 
     static Atk[] loadAtks() {
         CSVFile atkCSV = new CSVFile("./data/atks.csv");
@@ -38,6 +42,15 @@ class PkmnBattleSim {
         }
         return atkRes;
     }
+    static Pokemon stringToPkmn(String pkmn) {
+        Pokemon pkmnRes = pkmnDatabase[0];
+        for (int i = 0; i < pkmnDatabase.length; i += 1) {
+            if (pkmn.equals(pkmnDatabase[i].nom)) {
+                pkmnRes = pkmnDatabase[i];
+            }
+        }
+        return pkmnRes;
+    }
     static boolean isValidPokemon(String attempt) {
         for (int i = 0; i < pkmnDatabase.length; i += 1) {
             if(pkmnDatabase[i].nom.equals(attempt)) {return true;}
@@ -46,18 +59,65 @@ class PkmnBattleSim {
     }
 
     public static void main(String[] args) {
+        Funcs.clearScreen();
         System.out.print("Bienvenue dans le Pokémon Battle Simulator!\n\nVeuillez choisir un Pokémon dans la liste suivante:\n\t");
         for (int i = 0; i < pkmnDatabase.length - 1; i += 1) {
             System.out.print(pkmnDatabase[i].nom + ", ");
         }
         System.out.println("et " + pkmnDatabase[pkmnDatabase.length-1].nom + "\n");
-        /*String pkmnAttempt = ;
+        String pkmnAttempt = Keyboard.readString();
         while (!isValidPokemon(pkmnAttempt)) {
+            Funcs.clearScreen();
+            System.out.print("Veuillez choisir un Pokémon dans la liste suivante:\n\t");
             for (int i = 0; i < pkmnDatabase.length - 1; i += 1) {
                 System.out.print(pkmnDatabase[i].nom + ", ");
             }
             System.out.println("et " + pkmnDatabase[pkmnDatabase.length-1].nom + "\n");
-            pkmnAttempt = ;
-        }*/
+            pkmnAttempt = Keyboard.readString();
+        }
+        you = stringToPkmn(pkmnAttempt);
+        youBase = stringToPkmn(pkmnAttempt);
+        enemy = pkmnDatabase[(int)(Math.random() * pkmnDatabase.length)];
+        enemyBase = stringToPkmn(enemy.nom);
+
+        boolean youAttackFirst = (you.stats[VIT] > enemy.stats[VIT]);
+        
+        Funcs.clearScreen();
+        System.out.println("Un "+enemy.nom+" sauvage apparaît!");
+        Funcs.delay(3000);
+        String action;
+        while (you.stats[PV] > 0 && enemy.stats[PV] > 0) {
+            Funcs.clearScreen();
+            if (!youUsedTwoTurnMove) {
+                System.out.println("Vous:   "+you.nom + "\t("+you.stats[PV] + "/"+youBase.stats[PV] + ")\n"+
+                                "Ennemi: "+enemy.nom+"\t("+enemy.stats[PV]+"/"+enemyBase.stats[PV]+")\n");
+                action = Keyboard.readString("Que voulez-vous faire? (Attaque ou Sac)\n");
+                while (!(action.equals("Attaque") || action.equals("Sac"))) {
+                    Funcs.clearScreen();
+                    action = Keyboard.readString("Que voulez-vous faire? (Attaque ou Sac)\n");
+                }
+                Funcs.clearScreen();
+                if (action.equals("Attaque")) {
+                    if (youAttackFirst) {
+                        //You attaque
+                        //Enemy attaque
+                    } else {
+                        //Enemy attaque
+                        //You attaque
+                    }
+                } else {
+                    //Sac
+                    //Enemy attaque
+                }
+            } else {
+                if (youAttackFirst) {
+                    //You attaque
+                    //Enemy attaque
+                } else {
+                    //Enemy attaque
+                    //You attaque
+                }
+            }
+        }
     }
 }
